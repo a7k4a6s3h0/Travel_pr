@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{%block title%}
+booking
+{%endblock%}
+
+{%block content%}
+
+<h1 class="text-center">Travel page</h1>
+<hr>
+<nav class="navbar bg-primary navbar-expand-md ">
+    <div class="container">
+      <div class="col-2 text-left pl-md-0">
+        <h3 class="text-white"> Travel Places</h3>
+      </div>
+      
+      <div
+        class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
+        <ul class="navbar-nav justify-content-center  fw-bold">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="{% url 'homee' %}">Home </a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/admin">admin page </a>
+            
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      {% for b in name1 %}
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{b.book_photo.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{b.book_name}}</h5>
+              <p class="card-text">{{b.book_description}}</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+
+{%endblock%}
